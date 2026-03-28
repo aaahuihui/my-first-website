@@ -329,3 +329,103 @@ git commit -m "Initial commit"
 2. 新建远程仓库 `my-first-website`
 3. 把本地仓库连接到 GitHub
 4. 执行第一次 `git push`
+
+### Step 20：准备连接 GitHub 远程仓库
+
+我提供的 GitHub 页面地址是：
+- `https://github.com/aaahuihui/my-first-website/tree/main`
+
+需要注意：
+- 这个地址是仓库网页里的分支页面地址
+- 真正给 Git 使用的远程仓库地址，通常写成：
+- `https://github.com/aaahuihui/my-first-website.git`
+
+我学到的点：
+- GitHub 页面地址和 Git 远程仓库地址不是完全一样
+- 给 `git remote add origin` 用的，一般是以 `.git` 结尾的仓库地址
+
+### Step 21：第一次 push 遇到远程拒绝
+
+执行命令：
+
+```powershell
+git push -u origin main
+```
+
+本次实际结果：
+- 推送被拒绝
+- 原因提示：`main -> main (fetch first)`
+- Git 提示远程仓库里已经有本地没有的内容
+
+我学到的点：
+- 如果远程仓库已经有提交，本地不能无脑直接推送
+- 这时候要先查看远程仓库里到底多了什么，再决定是合并还是其他处理方式
+- 这不是项目坏了，而是 Git 在保护提交历史
+
+### Step 22：检查远程仓库为什么不能直接 push
+
+在第一次 push 被拒绝后，继续检查远程仓库内容。
+
+检查结果：
+- 远程 `origin/main` 已经存在提交历史
+- 远程历史中有两次提交：
+  - `3ba1247 Initial commit`
+  - `01888b4 Delete README.md`
+- 当前远程分支虽然文件树是空的，但历史不是空的
+
+我学到的点：
+- Git 判断“能不能直接 push”时，看的是提交历史，不只是当前有没有文件
+- 即使远程现在看起来是空仓库，只要它有过提交，本地第一次 push 也可能被拒绝
+
+### Step 23：合并远程历史
+
+执行命令：
+
+```powershell
+git merge origin/main --allow-unrelated-histories -m "Merge remote main before first push"
+```
+
+本次实际结果：
+- 合并成功
+- 没有出现文件冲突
+
+我学到的点：
+- `--allow-unrelated-histories` 用于处理“本地和远程各自都有独立历史”的情况
+- 这一步的目的不是覆盖谁，而是把两边历史安全接起来
+- 比起强制覆盖，合并历史更稳妥，也更适合学习 Git 的正常流程
+
+### Step 24：第一次成功 push 到 GitHub
+
+再次执行命令：
+
+```powershell
+git push -u origin main
+```
+
+本次实际结果：
+- 推送成功
+- `branch 'main' set up to track 'origin/main'`
+- 最新推送后的提交节点：`69ec6bb`
+
+我学到的点：
+- `-u origin main` 的作用是把本地 `main` 和远程 `origin/main` 建立跟踪关系
+- 建好跟踪关系后，以后再 push、pull 会更方便
+- 到这一步为止，我的本地网页仓库已经成功上传到了 GitHub
+
+## 当前状态更新
+
+我现在已经完成了：
+1. 创建静态网页项目骨架
+2. 安装 Git，并确认安装在 `E 盘`
+3. 配置 Git 用户名和邮箱
+4. 初始化本地仓库
+5. 完成第一次本地提交
+6. 连接 GitHub 远程仓库
+7. 处理远程已有历史的问题
+8. 成功把本地仓库推送到 GitHub
+
+下一步要进入的是：
+1. 检查 GitHub 仓库页面是否能看到本地文件
+2. 开启 GitHub Pages
+3. 等待网页生成公开访问链接
+4. 验证网页是否上线成功
