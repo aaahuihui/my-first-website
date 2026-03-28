@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Li Yinhui | Personal Homepage</title>
-  <meta name="description" content="Li Yinhui 的个人主页，展示个人简介、学校、联系方式与作品。">
+  <meta name="description" content="Li Yinhui 的个人主页，展示个人简介、专业、年级、技能、联系方式与作品。">
   <link rel="stylesheet" href="./style.css">
 </head>
 <body>
@@ -13,21 +13,27 @@
       <p class="eyebrow">Personal Homepage</p>
       <h1>李银辉 / Li Yinhui</h1>
       <p class="hero__intro">
-        你好，我是一名正在系统学习网页开发的学生。这是我的第一版个人主页，我会在这里持续记录自己的学习、作品和成长轨迹。
+        你好，我是电子信息专业的研一学生，目前正在一步一步学习网页开发、版本管理和项目发布。
+        对我来说，这个网站不仅是个人主页，也是我持续实践和记录成长的地方。
       </p>
+      <p class="hero__quote">一句话介绍：不断在学习。</p>
       <div class="hero__actions">
         <a class="button button--primary" href="#projects">查看作品</a>
         <a class="button button--ghost" href="#contact">联系我</a>
         <button class="button button--soft" id="statusButton" type="button">更新近况</button>
       </div>
-      <p class="hero__status" id="statusMessage">当前状态：正在从静态网页开始，一步一步搭建自己的前端世界。</p>
+      <p class="hero__status" id="statusMessage">当前状态：电子信息研一，正在继续补强 Python、C、C++ 和网页开发基础。</p>
     </div>
     <aside class="hero__card">
+      <div class="identity-badge">
+        <p class="identity-badge__initials">LYH</p>
+        <p class="identity-badge__text">暂未放头像，先用文字身份卡展示自己。</p>
+      </div>
       <p class="card__label">Quick Profile</p>
       <ul class="profile-list">
-        <li><span>身份</span><strong>网页开发初学者</strong></li>
+        <li><span>身份</span><strong>电子信息专业研一学生</strong></li>
         <li><span>学校</span><strong>中国科学技术大学</strong></li>
-        <li><span>方向</span><strong>前端基础 / Git / 网页发布</strong></li>
+        <li><span>一句话</span><strong>不断在学习</strong></li>
         <li><span>目标</span><strong>做出属于自己的完整作品集</strong></li>
       </ul>
     </aside>
@@ -41,17 +47,17 @@
       </div>
       <p>
         我目前正在从最基础的 HTML、CSS、JavaScript 开始学习网页开发，也在同步学习 Git、GitHub 和网页部署流程。
-        对我来说，这个网站不只是一个页面，更像是一份持续更新的成长记录。
+        作为电子信息专业的研一学生，我希望把编程基础和网页实践慢慢结合起来，做出更完整、更真实的个人项目。
       </p>
       <p>
-        我希望先把基础打牢，再慢慢扩展到更完整的前端框架、交互设计，以及后端开发。
+        现在的我还在起步阶段，但我愿意把每一次修改、每一次提交和每一次上线都认真记录下来，因为这些步骤本身就是成长的一部分。
       </p>
     </section>
 
     <section class="panel panel--accent" id="education">
       <div class="section-heading">
         <p class="eyebrow">Education</p>
-        <h2>学校信息</h2>
+        <h2>专业与阶段</h2>
       </div>
       <div class="info-grid">
         <article>
@@ -59,13 +65,28 @@
           <p class="info-value">中国科学技术大学</p>
         </article>
         <article>
-          <p class="info-title">当前阶段</p>
-          <p class="info-value">网页开发入门</p>
+          <p class="info-title">专业</p>
+          <p class="info-value">电子信息</p>
         </article>
         <article>
-          <p class="info-title">正在学习</p>
-          <p class="info-value">HTML / CSS / JavaScript / Git / GitHub Pages</p>
+          <p class="info-title">年级</p>
+          <p class="info-value">研一</p>
         </article>
+      </div>
+    </section>
+
+    <section class="panel" id="skills">
+      <div class="section-heading">
+        <p class="eyebrow">Skills</p>
+        <h2>当前技能</h2>
+      </div>
+      <p>
+        目前我最熟悉和正在巩固的编程语言主要是下面这些。后面我也会继续把网页开发相关技能一点点补充进来。
+      </p>
+      <div class="skill-tags">
+        <span class="skill-tag">Python</span>
+        <span class="skill-tag">C</span>
+        <span class="skill-tag">C++</span>
       </div>
     </section>
 
@@ -114,7 +135,7 @@
           <p class="project-card__tag">Next</p>
           <h3>更多作品正在准备中</h3>
           <p>
-            下一步我会继续完善个人主页内容，加入更多项目介绍、图片素材和更完整的自我展示。
+            下一步我会继续完善个人主页内容，加入更多真实项目、学习总结和更完整的自我展示。
           </p>
         </article>
       </div>

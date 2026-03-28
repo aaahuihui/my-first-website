@@ -12,5 +12,5 @@ statusButton.addEventListener("click", () => {
     minute: "2-digit"
   });
 
-  statusMessage.textContent = `当前状态已更新：${timeText}，我正在继续完善个人主页，并把学习过程记录到仓库里。`;
+  statusMessage.textContent = `当前状态已更新：${timeText}，我是电子信息专业研一学生，正在继续练习 Python、C、C++，也在不断学习网页开发。`;
 });
