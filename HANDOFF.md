@@ -11,6 +11,7 @@
 - “建站过程记录” 已经可以点击进入详情页
 - “我的第一个网页仓库” 已经有项目介绍页
 - “更多作品正在准备中” 已经有未来计划页
+- 已新增“资料下载中心”页面，用来管理以后接入的资料入口
 - BUILD-LOG.md 持续记录了整个搭建过程
 - 所有主要步骤都已经做过 Git 提交并推送到了 GitHub
 
@@ -19,6 +20,7 @@
 - 建站过程记录页：`https://aaahuihui.github.io/my-first-website/process.html`
 - 项目介绍页：`https://aaahuihui.github.io/my-first-website/project-website.html`
 - 未来计划页：`https://aaahuihui.github.io/my-first-website/roadmap.html`
+- 资料下载中心页：`https://aaahuihui.github.io/my-first-website/downloads.html`
 
 ## 下次要做什么
 
@@ -26,7 +28,7 @@
 1. 增加技能熟练度模块
 2. 继续细化教育经历，补充年份、本科院校或阶段信息
 3. 给研究方向加入更具体的内容，比如课程、项目或阅读方向
-4. 给作品区继续增加新的项目卡片
+4. 给资料下载中心接入真实的云盘或下载链接
 5. 有头像之后，把现在的文字身份卡替换成真实头像
 6. 继续完善 README.md，让项目简介更贴近当前真实网站状态
 
@@ -37,6 +39,7 @@
 - `process.html`：建站过程记录页
 - `project-website.html`：第一个网页仓库项目介绍页
 - `roadmap.html`：未来计划页
+- `downloads.html`：资料下载中心页
 
 当前项目中的核心记录与配置文件：
 - `BUILD-LOG.md`：全过程记录
@@ -56,7 +59,7 @@
 作用：回顾整个过程、知道之前做过哪些修改和为什么这么做
 
 3. `README.md`
-作用：看项目简介是否需要同步更新
+作用：看项目简介和资料存储原则是否需要同步更新
 
 4. `git log --oneline --decorate -n 10`
 作用：快速复习最近几次提交做了什么
@@ -66,7 +69,7 @@
 - `index.html`
 - `style.css`
 - `script.js`
-- 如果要改详情页，再看对应的 html 文件
+- 如果要改详情页或下载页，再看对应的 html 文件
 
 ## 和 AI 协作时的建议说法
 
@@ -82,6 +85,12 @@
 继续保持 BUILD-LOG.md、README.md、Git 提交和 GitHub 推送。
 ```
 
+如果你要开始往资料下载中心接入文件入口，可以这样说：
+
+```text
+先看 HANDOFF.md、BUILD-LOG.md、README.md 和 git log，再把这些资料链接接到 downloads.html。
+```
+
 ## 当前重要约定
 
 - 持续保留：`BUILD-LOG.md`
@@ -89,4 +98,6 @@
 - 持续保留：`HANDOFF.md`
 - 每完成一小步尽量做一次 Git 提交
 - 每个阶段完成后继续推送 GitHub
+- 网站仓库主要保存代码、说明和下载入口
+- 大文件长期放在更稳定的云端存储中
 - 不到万不得已，不要往 `C 盘` 安装软件

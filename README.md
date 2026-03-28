@@ -8,6 +8,7 @@
 - `process.html`：建站过程记录页
 - `project-website.html`：第一个网页仓库项目介绍页
 - `roadmap.html`：未来计划页
+- `downloads.html`：资料下载中心页
 
 ## 重要记录文件
 
@@ -18,6 +19,12 @@
 
 1. 直接双击 `index.html`
 2. 或者访问线上地址：`https://aaahuihui.github.io/my-first-website/`
+
+## 当前资料存储原则
+
+- 网站仓库主要保存网页代码、说明和下载入口
+- 大文件如压缩包、PDF、PPT 等建议长期保存在云盘或其他稳定存储中
+- 网站中的“资料下载中心”页面负责展示这些资料入口
 
 ## 协作约定
 
