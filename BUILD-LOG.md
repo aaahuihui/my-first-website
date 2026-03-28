@@ -429,3 +429,100 @@ git push -u origin main
 2. 开启 GitHub Pages
 3. 等待网页生成公开访问链接
 4. 验证网页是否上线成功
+
+### Step 27：在 GitHub Pages 中选择发布分支
+
+进入页面：
+- `Settings -> Pages`
+
+当前页面状态说明：
+- `Source` 已经是 `Deploy from a branch`
+- 下面的 `Branch` 现在还是 `None`
+- 这表示 GitHub Pages 还没有真正启用，只差选择发布分支并保存
+
+要做的操作：
+1. 点击 `Branch` 下拉框中的 `None`
+2. 选择 `main`
+3. 如果右边出现文件夹选项，选择 `/(root)`
+4. 点击 `Save`
+
+我学到的点：
+- GitHub Pages 需要明确知道“从哪个分支、哪个目录发布网页”
+- 对最基础的静态网页仓库来说，通常选择 `main + /(root)`
+- 因为我的 `index.html` 就放在仓库根目录里
+
+### Step 28：GitHub Pages 配置保存成功
+
+在 `Settings -> Pages` 页面中，已经完成以下选择：
+- `Source`：`Deploy from a branch`
+- `Branch`：`main`
+- `Folder`：`/(root)`
+
+保存后的页面提示：
+- `Your GitHub Pages site is currently being built from the main branch.`
+
+这表示：
+- GitHub Pages 已经成功启用
+- GitHub 正在根据仓库根目录中的网页文件生成网站
+- 现在需要等待它完成构建和发布
+
+我学到的点：
+- 看到 `currently being built` 说明配置已经正确提交给 GitHub
+- 这不是报错，而是“正在部署中”
+- 对于最基础的静态网页项目，`main + /(root)` 就是标准发布方式
+
+### Step 29：预计访问地址
+
+这个仓库的 GitHub Pages 地址通常会是：
+- `https://aaahuihui.github.io/my-first-website/`
+
+我学到的点：
+- GitHub 项目页常见网址格式是：`https://用户名.github.io/仓库名/`
+- 以后只要我继续往这个仓库 push 新版本，GitHub Pages 通常也会自动重新发布
+
+### Step 30：验证网页已经成功上线
+
+我打开 GitHub Pages 地址后，看到了网页正常显示：
+- 页面标题正常
+- 中文内容正常
+- 样式正常加载
+- 按钮正常显示
+- 整个页面布局完整
+
+这说明：
+- GitHub Pages 已经部署成功
+- 仓库根目录中的 `index.html`、`style.css`、`script.js` 都已经被正确发布
+- 我的第一个静态网页仓库，已经真正可以被别人通过网址访问了
+
+我学到的点：
+- 判断网页是否上线成功，不能只看设置页面，还要真正打开网址检查
+- 如果页面文字、样式、按钮都正常，说明 HTML、CSS、JS 基本都加载成功
+- 到这一步，我已经完成了从本地开发到远程上线的完整闭环
+
+## 本阶段总结
+
+我已经完整走完了这条新手建站路线：
+1. 新建静态网页项目文件夹
+2. 编写最基础的网页文件
+3. 本地打开网页查看效果
+4. 安装 Git，并确认安装位置在 `E 盘`
+5. 配置 Git 用户名和邮箱
+6. 初始化本地 Git 仓库
+7. 创建第一次本地提交
+8. 连接 GitHub 远程仓库
+9. 处理远程已有历史的问题
+10. 把本地仓库成功推送到 GitHub
+11. 启用 GitHub Pages
+12. 成功验证网页正式上线
+
+## 当前项目访问地址
+
+- `https://aaahuihui.github.io/my-first-website/`
+
+## 下一步可以继续学什么
+
+- 把网页内容改成你自己的个人主页
+- 学会继续修改后再 `git add`、`git commit`、`git push`
+- 学会新增图片、头像、项目介绍模块
+- 学会使用更完整的页面结构
+- 再考虑学习 Vue、React 或后端
