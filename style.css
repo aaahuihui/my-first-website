@@ -360,6 +360,42 @@ h1 {
   width: min(1180px, calc(100% - 40px));
   margin: 0 auto 32px;
   color: var(--muted);
+}
+
+.footer__grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.footer__item {
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: rgba(255, 248, 240, 0.86);
+  box-shadow: 0 12px 28px rgba(88, 58, 23, 0.08);
+}
+
+.footer__label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-strong);
+}
+
+.footer__item strong,
+.footer__item a {
+  color: var(--text);
+  font-size: 15px;
+  line-height: 1.7;
+  text-decoration: none;
+  word-break: break-word;
+}
+
+.footer__credit {
+  margin: 18px 0 0;
   text-align: center;
 }
 
@@ -370,7 +406,8 @@ h1 {
 
   .info-grid,
   .contact-grid,
-  .project-grid {
+  .project-grid,
+  .footer__grid {
     grid-template-columns: 1fr;
   }
 }
