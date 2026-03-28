@@ -186,3 +186,146 @@ git config --global --get user.email
 4. 检查出 Git 用户名和邮箱还没有配置
 
 我现在距离上传 GitHub 还差的关键一步是：先设置 Git 身份信息。
+
+### Step 12：设置 Git 全局用户名
+
+执行命令：
+
+```powershell
+git config --global user.name "Li_Yinhui"
+```
+
+本次实际设置值：
+- `Li_Yinhui`
+
+我学到的点：
+- `user.name` 会进入每一次 Git 提交记录
+- 这里一般填写自己想显示的名字
+
+### Step 13：设置 Git 全局邮箱
+
+执行命令：
+
+```powershell
+git config --global user.email "li_yinhui@mail.ustc.edu.cn"
+```
+
+本次实际设置值：
+- `li_yinhui@mail.ustc.edu.cn`
+
+我学到的点：
+- `user.email` 也会写进提交记录
+- 以后在 GitHub 上，这个邮箱还可能用于关联提交身份
+
+### Step 14：初始化本地 Git 仓库
+
+执行命令：
+
+```powershell
+git init -b main
+```
+
+本次实际结果：
+- 在 `E:\Project\houDuan\my-first-website` 中创建了 `.git` 目录
+- 默认分支名为 `main`
+
+我学到的点：
+- `git init` 的作用是让一个普通文件夹变成 Git 仓库
+- 从这一步开始，Git 才能跟踪这个项目的变化
+- `main` 是当前常见的默认主分支名称
+
+### Step 15：处理 safe.directory 提示
+
+执行过程中遇到提示：
+- Git 认为当前仓库的拥有者和当前 Windows 用户不一致
+- 因此需要把这个目录加入 `safe.directory`
+
+执行命令：
+
+```powershell
+git config --global --add safe.directory "E:/Project/houDuan/my-first-website"
+```
+
+我学到的点：
+- 这是 Git 的安全保护机制之一
+- 它不是报错修不好，而是在要求我明确标记“这个仓库是可信的”
+- 只要是我自己确认安全的项目目录，就可以加入白名单
+
+### Step 16：查看仓库当前状态
+
+执行命令：
+
+```powershell
+git status --short --branch
+```
+
+本次实际结果：
+- `## No commits yet on main`
+- 文件前面显示 `??`，表示这些文件还没有被 Git 跟踪
+
+我学到的点：
+- `git status` 是最常用的 Git 检查命令之一
+- `??` 表示未跟踪文件
+- 提交前先看状态，是一个很重要的习惯
+
+### Step 17：把文件加入暂存区
+
+执行命令：
+
+```powershell
+git add .
+```
+
+本次实际结果：
+- 当前网页项目中的所有文件都被加入暂存区
+
+执行时出现提示：
+- `LF will be replaced by CRLF`
+
+我学到的点：
+- `git add .` 会把当前目录下的改动加入暂存区
+- Windows 中出现换行符提示很常见，一般不是错误
+- 暂存区可以理解为“准备提交的清单”
+
+### Step 18：创建第一次提交
+
+执行命令：
+
+```powershell
+git commit -m "Initial commit"
+```
+
+本次实际结果：
+- 成功创建第一次提交
+- 提交编号：`43b7e1a`
+- 提交说明：`Initial commit`
+
+我学到的点：
+- `commit` 是把当前暂存区内容正式保存为一个历史版本
+- `-m` 后面的文字是这次提交的说明
+- 从这一步开始，我的项目已经有了第一个可回退、可追踪的版本
+
+### Step 19：确认第一次提交后的状态
+
+检查结果：
+- 当前分支：`main`
+- 当前工作区是干净的，没有未提交改动
+
+我学到的点：
+- 如果 `git status` 显示干净，说明当前改动都已经被记录好了
+- 这是判断“这一小步是否真正完成”的一个重要信号
+
+## 当前状态更新
+
+我现在已经完成了：
+1. 创建静态网页项目骨架
+2. 安装 Git，并确认安装在 `E 盘`
+3. 配置 Git 用户名和邮箱
+4. 初始化本地仓库
+5. 完成第一次本地提交
+
+下一步要进入的是：
+1. 注册或登录 GitHub
+2. 新建远程仓库 `my-first-website`
+3. 把本地仓库连接到 GitHub
+4. 执行第一次 `git push`
