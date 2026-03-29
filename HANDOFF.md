@@ -13,6 +13,7 @@
 - “更多作品正在准备中” 已经有未来计划页
 - 已新增“资料下载中心”页面，用来管理以后接入的资料入口
 - 已新增 `CLOUD-STORAGE-PLAN.md`，记录阿里云盘主用、百度网盘备用的文件分类方案
+- 已新增 `ERROR-LOG.md`，专门记录开发中遇到的错误与修正过程
 - BUILD-LOG.md 持续记录了整个搭建过程
 - 所有主要步骤都已经做过 Git 提交并推送到了 GitHub
 
@@ -47,6 +48,7 @@
 - `README.md`：项目简介
 - `HANDOFF.md`：交接说明
 - `CLOUD-STORAGE-PLAN.md`：云端文件夹分类方案
+- `ERROR-LOG.md`：错误与修正记录
 - `style.css`：样式文件
 - `script.js`：主页交互脚本
 - `process.js`：过程记录页脚本
@@ -60,13 +62,16 @@
 2. `BUILD-LOG.md`
 作用：回顾整个过程、知道之前做过哪些修改和为什么这么做
 
-3. `README.md`
+3. `ERROR-LOG.md`
+作用：复习之前踩过的坑、避免重复犯同样的错误
+
+4. `README.md`
 作用：看项目简介和资料存储原则是否需要同步更新
 
-4. `git log --oneline --decorate -n 10`
+5. `git log --oneline --decorate -n 10`
 作用：快速复习最近几次提交做了什么
 
-5. 再看具体页面文件
+6. 再看具体页面文件
 通常优先看：
 - `index.html`
 - `style.css`
@@ -78,19 +83,19 @@
 以后如果继续找我做网站，可以直接这样说：
 
 ```text
-先看 HANDOFF.md、BUILD-LOG.md、README.md 和 git log，再继续做下面的内容。
+先看 HANDOFF.md、BUILD-LOG.md、ERROR-LOG.md、README.md 和 git log，再继续做下面的内容。
 ```
 
 如果你想让我继续保持现在这套可追溯方式，也可以补一句：
 
 ```text
-继续保持 BUILD-LOG.md、README.md、Git 提交和 GitHub 推送。
+继续保持 BUILD-LOG.md、README.md、ERROR-LOG.md、Git 提交和 GitHub 推送。
 ```
 
 如果你要开始往资料下载中心接入文件入口，可以这样说：
 
 ```text
-先看 HANDOFF.md、BUILD-LOG.md、README.md 和 git log，再把这些资料链接接到 downloads.html。
+先看 HANDOFF.md、BUILD-LOG.md、ERROR-LOG.md、README.md 和 git log，再把这些资料链接接到 downloads.html。
 ```
 
 ## 当前重要约定
@@ -98,6 +103,7 @@
 - 持续保留：`BUILD-LOG.md`
 - 持续保留：`README.md`
 - 持续保留：`HANDOFF.md`
+- 持续保留：`ERROR-LOG.md`
 - 每完成一小步尽量做一次 Git 提交
 - 每个阶段完成后继续推送 GitHub
 - 网站仓库主要保存代码、说明和下载入口
