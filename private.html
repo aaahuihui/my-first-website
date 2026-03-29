@@ -1,0 +1,125 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>私人资料入口 | Li Yinhui</title>
+  <meta name="description" content="Li Yinhui 的私人资料入口页，输入密码后可查看仅限自己使用的云盘资料入口。">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body class="process-page">
+  <main class="process-shell">
+    <a class="process-back" href="./downloads.html">返回资料下载中心</a>
+    <section class="process-panel">
+      <p class="eyebrow">Private Access</p>
+      <h1>私人资料入口</h1>
+      <p class="process-intro">
+        这个页面适合静态网站阶段使用：先在网页里做一层密码入口，真正的私人文件仍建议放在阿里云盘或百度网盘里，再配合分享密码或提取码一起保护。
+      </p>
+
+      <div class="detail-grid">
+        <article class="detail-card">
+          <p class="detail-card__label">当前模式</p>
+          <h2>双层保护思路</h2>
+          <p>第一层是网站里的密码入口，第二层是云盘自己的分享密码或提取码。这样比直接公开放链接更稳，也更适合目前的静态网站阶段。</p>
+        </article>
+        <article class="detail-card">
+          <p class="detail-card__label">安全提醒</p>
+          <h2>不是后端级安全</h2>
+          <p>由于这是 GitHub Pages 静态网页，页面代码本身是公开的，所以它适合做初步访问限制，不适合存放真正高敏感信息。</p>
+        </article>
+      </div>
+
+      <section class="detail-section private-lock">
+        <h2>输入访问密码</h2>
+        <p>当前演示密码我先帮你设为 <code>study2026</code>，后面你可以再让我帮你改成自己的密码。</p>
+        <form class="private-form" id="privateForm">
+          <label class="private-label" for="privatePassword">访问密码</label>
+          <div class="private-form__row">
+            <input class="private-input" id="privatePassword" name="privatePassword" type="password" placeholder="请输入密码" autocomplete="current-password" required>
+            <button class="button button--primary" type="submit">解锁资料</button>
+          </div>
+          <p class="private-hint">提示：后续如果你给我真实的阿里云盘分享链接，我会把它们放到解锁后的资料区里。</p>
+          <p class="private-message" id="privateMessage">当前状态：未解锁</p>
+        </form>
+      </section>
+
+      <section class="detail-section private-panel private-panel--hidden" id="privatePanel">
+        <h2>已解锁：私人资料区</h2>
+        <p>这里放的是只有输入密码后才显示的入口。真正文件建议继续保存在云盘中，并配合分享密码使用。</p>
+
+        <div class="resource-list">
+          <article class="resource-item">
+            <div>
+              <p class="resource-item__category">私人项目资料</p>
+              <h3>待接入：私人项目压缩包</h3>
+              <p>以后这里可以放你不想在公开页面直接展示的项目资料，比如带说明文档的源码压缩包或内部整理版本。</p>
+            </div>
+            <div class="resource-links">
+              <span class="resource-link resource-link--pending">阿里云盘：待接入</span>
+              <span class="resource-link resource-link--pending">百度网盘：待接入</span>
+            </div>
+          </article>
+
+          <article class="resource-item">
+            <div>
+              <p class="resource-item__category">私人学习资料</p>
+              <h3>待接入：个人笔记 / 归档资料</h3>
+              <p>以后这里可以放你自己的总结笔记、阶段性整理文件，或者暂时只想自己或少数人查看的资料入口。</p>
+            </div>
+            <div class="resource-links">
+              <span class="resource-link resource-link--pending">阿里云盘：待接入</span>
+              <span class="resource-link resource-link--pending">百度网盘：待接入</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="detail-section">
+        <h2>以后你怎么把私人资料交给我接入</h2>
+        <ul class="detail-list">
+          <li>资料名称</li>
+          <li>一句简短说明</li>
+          <li>阿里云盘分享链接</li>
+          <li>阿里云盘分享密码或说明</li>
+          <li>百度网盘分享链接和提取码（如果有）</li>
+          <li>资料分类：私人项目 / 私人笔记 / 归档资料 / 其他</li>
+        </ul>
+        <p>你把这些信息发给我之后，我就可以继续把它们接到这个解锁区域里。</p>
+      </section>
+    </section>
+  </main>
+
+  <script>
+    const PASSWORD_HASH = "16023df26ed384352d6820bc638c686ac3ef71424a51ca3f0941a96d7c948332";
+    const form = document.getElementById("privateForm");
+    const passwordInput = document.getElementById("privatePassword");
+    const message = document.getElementById("privateMessage");
+    const panel = document.getElementById("privatePanel");
+
+    async function sha256(text) {
+      const bytes = new TextEncoder().encode(text);
+      const digest = await crypto.subtle.digest("SHA-256", bytes);
+      return Array.from(new Uint8Array(digest)).map((item) => item.toString(16).padStart(2, "0")).join("");
+    }
+
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      const password = passwordInput.value.trim();
+      const passwordHash = await sha256(password);
+
+      if (passwordHash === PASSWORD_HASH) {
+        panel.classList.remove("private-panel--hidden");
+        message.textContent = "当前状态：密码正确，私人资料已解锁";
+        message.classList.add("private-message--success");
+        passwordInput.value = "";
+        return;
+      }
+
+      panel.classList.add("private-panel--hidden");
+      message.textContent = "当前状态：密码不正确，请重新输入";
+      message.classList.remove("private-message--success");
+    });
+  </script>
+</body>
+</html>

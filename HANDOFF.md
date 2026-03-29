@@ -12,6 +12,7 @@
 - “我的第一个网页仓库” 已经有项目介绍页
 - “更多作品正在准备中” 已经有未来计划页
 - 已新增“资料下载中心”页面，用来管理以后接入的资料入口
+- 已新增“私人资料入口”页面，用来做静态网站阶段的第一层密码保护
 - 已新增 `CLOUD-STORAGE-PLAN.md`，记录阿里云盘主用、百度网盘备用的文件分类方案
 - 已新增 `ERROR-LOG.md`，专门记录开发中遇到的错误与修正过程
 - BUILD-LOG.md 持续记录了整个搭建过程
@@ -23,16 +24,17 @@
 - 项目介绍页：`https://aaahuihui.github.io/my-first-website/project-website.html`
 - 未来计划页：`https://aaahuihui.github.io/my-first-website/roadmap.html`
 - 资料下载中心页：`https://aaahuihui.github.io/my-first-website/downloads.html`
+- 私人资料入口页：`https://aaahuihui.github.io/my-first-website/private.html`
 
 ## 下次要做什么
 
 下次最推荐继续做的内容：
-1. 增加技能熟练度模块
-2. 继续细化教育经历，补充年份、本科院校或阶段信息
-3. 给研究方向加入更具体的内容，比如课程、项目或阅读方向
-4. 给资料下载中心接入真实的云盘或下载链接
-5. 有头像之后，把现在的文字身份卡替换成真实头像
-6. 继续完善 README.md，让项目简介更贴近当前真实网站状态
+1. 给 `private.html` 接入真实的阿里云盘或百度网盘链接
+2. 把演示密码改成你自己的密码
+3. 增加技能熟练度模块
+4. 继续细化教育经历，补充年份、本科院校或阶段信息
+5. 给研究方向加入更具体的内容，比如课程、项目或阅读方向
+6. 有头像之后，把现在的文字身份卡替换成真实头像
 
 ## 当前网站有哪些页面
 
@@ -42,6 +44,7 @@
 - `project-website.html`：第一个网页仓库项目介绍页
 - `roadmap.html`：未来计划页
 - `downloads.html`：资料下载中心页
+- `private.html`：私人资料入口页
 
 当前项目中的核心记录与配置文件：
 - `BUILD-LOG.md`：全过程记录
@@ -76,7 +79,7 @@
 - `index.html`
 - `style.css`
 - `script.js`
-- 如果要改详情页或下载页，再看对应的 html 文件
+- 如果要改详情页、下载页或私人资料页，再看对应的 html 文件
 
 ## 和 AI 协作时的建议说法
 
@@ -92,10 +95,10 @@
 继续保持 BUILD-LOG.md、README.md、ERROR-LOG.md、Git 提交和 GitHub 推送。
 ```
 
-如果你要开始往资料下载中心接入文件入口，可以这样说：
+如果你要开始往资料下载中心或私人资料区接入文件入口，可以这样说：
 
 ```text
-先看 HANDOFF.md、BUILD-LOG.md、ERROR-LOG.md、README.md 和 git log，再把这些资料链接接到 downloads.html。
+先看 HANDOFF.md、BUILD-LOG.md、ERROR-LOG.md、README.md 和 git log，再把这些资料链接接到 downloads.html 和 private.html。
 ```
 
 ## 当前重要约定
@@ -108,4 +111,5 @@
 - 每个阶段完成后继续推送 GitHub
 - 网站仓库主要保存代码、说明和下载入口
 - 大文件长期放在阿里云盘中，百度网盘可作为备用分享渠道
+- `private.html` 只适合静态网站阶段的第一层保护，真正私人文件仍建议继续依赖云盘分享密码或提取码
 - 不到万不得已，不要往 `C 盘` 安装软件
