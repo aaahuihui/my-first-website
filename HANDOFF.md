@@ -15,6 +15,7 @@
 - 已新增“私人资料入口”页面，用来做静态网站阶段的第一层密码保护
 - 已新增“本地资料管理页”，可通过后端数据库维护资料列表
 - 已新增最小 Node 后端和 SQLite 数据库，用来保存资料标题、说明、链接和更新时间
+- 已新增后端专属学习手册和面试记录，后面所有后端内容都单独沉淀在专属文档里
 - 已新增 `CLOUD-STORAGE-PLAN.md`，记录阿里云盘主用、百度网盘备用的文件分类方案
 - 已新增 `ERROR-LOG.md`，专门记录开发中遇到的错误与修正过程
 - BUILD-LOG.md 持续记录了整个搭建过程
@@ -61,6 +62,8 @@
 - `HANDOFF.md`：交接说明
 - `CLOUD-STORAGE-PLAN.md`：云端文件夹分类方案
 - `ERROR-LOG.md`：错误与修正记录
+- `BACKEND-LEARNING-LOG.md`：后端学习手册
+- `BACKEND-INTERVIEW-NOTES.md`：后端面试记录
 - `style.css`：样式文件
 - `script.js`：主页交互脚本
 - `process.js`：过程记录页脚本
@@ -90,7 +93,13 @@
 5. `git log --oneline --decorate -n 10`
 作用：快速复习最近几次提交做了什么
 
-6. 再看具体页面文件
+6. `BACKEND-LEARNING-LOG.md`
+作用：复习后端为什么这样设计、命令怎么跑、流程是什么、问题怎么解决
+
+7. `BACKEND-INTERVIEW-NOTES.md`
+作用：复习以后找后端工作时，这个项目可以怎么讲
+
+8. 再看具体页面文件
 通常优先看：
 - `index.html`
 - `downloads.html`
@@ -114,6 +123,12 @@
 继续保持 BUILD-LOG.md、README.md、ERROR-LOG.md、Git 提交和 GitHub 推送。
 ```
 
+如果你要继续做后端，并保持单独的后端学习记录，可以这样说：
+
+```text
+先看 HANDOFF.md、BUILD-LOG.md、ERROR-LOG.md、README.md、BACKEND-LEARNING-LOG.md、BACKEND-INTERVIEW-NOTES.md 和 git log，再继续做下面的后端内容。
+```
+
 如果你要继续维护资料数据库，可以这样说：
 
 ```text
@@ -126,6 +141,8 @@
 - 持续保留：`README.md`
 - 持续保留：`HANDOFF.md`
 - 持续保留：`ERROR-LOG.md`
+- 持续保留：`BACKEND-LEARNING-LOG.md`
+- 持续保留：`BACKEND-INTERVIEW-NOTES.md`
 - 每完成一小步尽量做一次 Git 提交
 - 每个阶段完成后继续推送 GitHub
 - 网站仓库主要保存代码、说明和下载入口

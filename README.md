@@ -26,6 +26,8 @@
 - `HANDOFF.md`：记录当前进度、下次待办和每次继续开发前应先看什么
 - `CLOUD-STORAGE-PLAN.md`：记录阿里云盘主用、百度网盘备用的文件分类方案
 - `ERROR-LOG.md`：记录遇到的错误、原因、修正方法和最终结果
+- `BACKEND-LEARNING-LOG.md`：后端学习手册，单独记录后端设计、流程、命令、问题和收获
+- `BACKEND-INTERVIEW-NOTES.md`：后端项目的面试表达记录
 
 ## 如何查看
 
@@ -56,6 +58,8 @@
 - 重要阶段维护 `README.md`
 - 保留 `HANDOFF.md` 方便以后追溯和继续开发
 - 遇到重要错误时，继续维护 `ERROR-LOG.md`
+- 后端相关内容单独维护 `BACKEND-LEARNING-LOG.md`
+- 后端项目面试表达持续维护 `BACKEND-INTERVIEW-NOTES.md`
 - 每完成一小步尽量做一次 Git 提交
 - 每个阶段完成后继续推送 GitHub
 - 不到万不得已，不往 `C 盘` 安装软件
