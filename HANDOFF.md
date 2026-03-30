@@ -16,6 +16,7 @@
 - 已新增“本地资料管理页”，可通过后端数据库维护资料列表
 - 已新增最小 Node 后端和 SQLite 数据库，用来保存资料标题、说明、链接和更新时间
 - 已新增后端专属学习手册和面试记录，后面所有后端内容都单独沉淀在专属文档里
+- 已新增后端学习手册展示页和后端面试记录展示页，可以直接在网页里查看这两份文档
 - 已新增 `CLOUD-STORAGE-PLAN.md`，记录阿里云盘主用、百度网盘备用的文件分类方案
 - 已新增 `ERROR-LOG.md`，专门记录开发中遇到的错误与修正过程
 - BUILD-LOG.md 持续记录了整个搭建过程
@@ -28,6 +29,8 @@
 - 未来计划页：`https://aaahuihui.github.io/my-first-website/roadmap.html`
 - 资料下载中心页：`https://aaahuihui.github.io/my-first-website/downloads.html`
 - 私人资料入口页：`https://aaahuihui.github.io/my-first-website/private.html`
+- 后端学习手册页：`https://aaahuihui.github.io/my-first-website/backend-learning.html`
+- 后端面试记录页：`https://aaahuihui.github.io/my-first-website/backend-interview.html`
 
 当前本地后端地址：
 - 主页：`http://127.0.0.1:3000/index.html`
@@ -55,6 +58,8 @@
 - `downloads.html`：资料下载中心页
 - `private.html`：私人资料入口页
 - `manage.html`：本地资料管理页
+- `backend-learning.html`：后端学习手册展示页
+- `backend-interview.html`：后端面试记录展示页
 
 当前项目中的核心记录与配置文件：
 - `BUILD-LOG.md`：全过程记录
@@ -70,6 +75,7 @@
 - `downloads.js`：公开资料页脚本
 - `private.js`：私人资料页脚本
 - `manage.js`：本地资料管理页脚本
+- `markdown-page.js`：Markdown 文档展示页脚本
 - `backend/server.js`：本地后端服务
 - `backend/database.js`：数据库模块
 - `backend/init-db.js`：数据库初始化脚本
@@ -105,6 +111,8 @@
 - `downloads.html`
 - `private.html`
 - `manage.html`
+- `backend-learning.html`
+- `backend-interview.html`
 - `style.css`
 - `backend/server.js`
 - `backend/database.js`

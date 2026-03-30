@@ -11,6 +11,8 @@
 - `downloads.html`：资料下载中心页
 - `private.html`：私人资料入口页（静态网站阶段的密码入口）
 - `manage.html`：本地资料管理页（通过后端维护资料列表）
+- `backend-learning.html`：后端学习手册展示页
+- `backend-interview.html`：后端面试记录展示页
 
 ## 后端与数据库文件
 
@@ -36,6 +38,8 @@
    - 在项目目录运行 `npm run dev`
    - 然后访问 `http://127.0.0.1:3000/index.html`
 3. 本地资料管理页：`http://127.0.0.1:3000/manage.html`
+4. 后端学习手册页：`./backend-learning.html`
+5. 后端面试记录页：`./backend-interview.html`
 
 ## 当前资料存储原则
 
@@ -51,6 +55,8 @@
 - 公开资料页会自动读取 `public` 资料
 - 私人资料页在输入密码后会自动读取 `private` 资料
 - 新资料推荐通过 `manage.html` 维护，而不是直接手改网页
+- 后端学习手册页会自动读取 `BACKEND-LEARNING-LOG.md`
+- 后端面试记录页会自动读取 `BACKEND-INTERVIEW-NOTES.md`
 
 ## 协作约定
 

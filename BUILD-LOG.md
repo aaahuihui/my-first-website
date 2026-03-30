@@ -1312,3 +1312,44 @@ git push -u origin main
 - 看总项目进度，看 `BUILD-LOG.md`
 - 看后端怎么做的，看 `BACKEND-LEARNING-LOG.md`
 - 看面试怎么讲，看 `BACKEND-INTERVIEW-NOTES.md`
+
+### Step 93：新增后端文档展示页
+
+这次为了让后端学习手册和面试记录不仅保存在仓库里，也能直接在网页里查看，新增了：
+- `backend-learning.html`
+- `backend-interview.html`
+- `markdown-page.js`
+
+这样做的效果是：
+- 后端学习手册可以直接作为网页展示
+- 后端面试记录也可以直接作为网页展示
+- 两个页面都会自动读取各自对应的 Markdown 文档
+
+我学到的点：
+- 文档如果只能在仓库里看，使用场景会比较窄
+- 把它们接进网页后，更像真正的“个人知识主页”
+
+### Step 94：把后端文档入口接入主页
+
+这次同步更新了：
+- `index.html`
+
+主要补充了：
+- 主页作品区新增“后端学习手册”入口
+- 主页作品区新增“后端面试记录”入口
+- 网站版本号更新为 `v2.2.0`
+
+我学到的点：
+- 如果这些内容对自己真的重要，就应该让它们在首页可见
+- 这样以后回顾、展示和复习都更方便
+
+### Step 95：同步更新 README 与 HANDOFF
+
+这次同步更新了：
+- `README.md`
+- `HANDOFF.md`
+
+主要补充了：
+- 新增两个网页页面：`backend-learning.html` 和 `backend-interview.html`
+- 新增 `markdown-page.js` 用于通用 Markdown 展示
+- 把这两个页面加入当前网站页面清单和继续开发前的复习顺序
