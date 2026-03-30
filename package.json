@@ -1,0 +1,9 @@
+﻿{
+  "name": "my-first-website",
+  "version": "2.1.0",
+  "private": true,
+  "scripts": {
+    "init-db": "node backend/init-db.js",
+    "dev": "node backend/server.js"
+  }
+}

@@ -1,6 +1,6 @@
 ﻿# My First Website
 
-这是一个正在持续完善中的个人主页项目，也是我从 0 开始学习网页开发、Git 和 GitHub Pages 的实践仓库。
+这是一个正在持续完善中的个人主页项目，也是我从 0 开始学习网页开发、Git、GitHub Pages 和最小后端数据库的实践仓库。
 
 ## 当前页面
 
@@ -10,6 +10,15 @@
 - `roadmap.html`：未来计划页
 - `downloads.html`：资料下载中心页
 - `private.html`：私人资料入口页（静态网站阶段的密码入口）
+- `manage.html`：本地资料管理页（通过后端维护资料列表）
+
+## 后端与数据库文件
+
+- `backend/server.js`：本地后端服务，负责提供 API 和静态页面
+- `backend/database.js`：SQLite 数据库读写逻辑
+- `backend/init-db.js`：初始化数据库脚本
+- `backend/data/resources.db`：本地数据库文件，运行后自动生成，不提交到 Git
+- `package.json`：本地后端运行脚本
 
 ## 重要记录文件
 
@@ -20,15 +29,26 @@
 
 ## 如何查看
 
-1. 直接双击 `index.html`
-2. 或者访问线上地址：`https://aaahuihui.github.io/my-first-website/`
+1. 只看静态网页：直接双击 `index.html`
+2. 体验后端数据库版：
+   - 在项目目录运行 `npm run dev`
+   - 然后访问 `http://127.0.0.1:3000/index.html`
+3. 本地资料管理页：`http://127.0.0.1:3000/manage.html`
 
 ## 当前资料存储原则
 
 - 网站仓库主要保存网页代码、说明和下载入口
 - 大文件如压缩包、PDF、PPT 等建议长期保存在阿里云盘中，百度网盘可作为备用分享渠道
-- 网站中的“资料下载中心”页面负责展示这些资料入口
+- 后端数据库保存资料标题、说明、分类、链接、提取信息和更新时间
 - `private.html` 适合做静态网站阶段的第一层密码入口，真正的私人文件仍建议继续放在云盘里，并使用分享密码或提取码保护
+
+## 当前运行方式
+
+- 初始化数据库：`npm run init-db`
+- 启动本地后端：`npm run dev`
+- 公开资料页会自动读取 `public` 资料
+- 私人资料页在输入密码后会自动读取 `private` 资料
+- 新资料推荐通过 `manage.html` 维护，而不是直接手改网页
 
 ## 协作约定
 

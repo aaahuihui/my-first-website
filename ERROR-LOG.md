@@ -43,3 +43,25 @@
   - 浏览器能打开 GitHub，不代表 Git 终端也一定能连上
   - 如果浏览器走了代理，而 Git 没走，`push` 和 `pull` 就可能失败
   - 遇到“浏览器能开、Git 不能推”的情况，优先检查代理配置
+
+### Error 2：PowerShell here-string 写法错误，导致后端初始化命令第一次失败
+
+- 时间：`2026-03-30`
+- 场景：
+  - 在项目里批量创建后端文件和 `.gitignore` 时
+  - 想一次性用 PowerShell here-string 写多个文件
+- 原始报错：
+  - `No characters are allowed after a here-string header but before the end of the line.`
+- 原因定位：
+  - here-string 头部写法不规范
+  - 在 `@'` 这一行后面混入了不该出现的额外字符，导致 PowerShell 解析失败
+- 修正方法：
+  - 把有问题的 here-string 拆开重写
+  - 单独使用 `Set-Content` 写入 `.gitkeep` 空文件
+  - 然后重新执行创建命令
+- 最终结果：
+  - 后端目录、`package.json`、`.gitignore` 等文件成功创建
+- 我学到的点：
+  - PowerShell 的 here-string 对格式要求很严格
+  - 如果一次性写多个文件时命令太长，拆开写会更稳
+  - 命令报错也需要记录下来，方便以后少踩坑

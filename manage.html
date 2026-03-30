@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>资料管理页 | Li Yinhui</title>
+  <meta name="description" content="Li Yinhui 的本地资料管理页，用来维护数据库中的公开和私人资料。">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body class="process-page">
+  <main class="process-shell">
+    <a class="process-back" href="./downloads.html">返回资料下载中心</a>
+    <section class="process-panel">
+      <p class="eyebrow">Local Admin</p>
+      <h1>本地资料管理页</h1>
+      <p class="process-intro">
+        这是给你自己维护资料列表用的页面。现在开始，你不需要每次手改网页，而是通过这个页面把资料写进后端数据库，前端会自动显示。
+      </p>
+
+      <div class="detail-grid">
+        <article class="detail-card">
+          <p class="detail-card__label">运行方式</p>
+          <h2>先启动本地后端</h2>
+          <p>在项目目录运行 <code>npm run dev</code>，然后访问 <code>http://127.0.0.1:3000/manage.html</code>。不要直接双击这个页面文件。</p>
+        </article>
+        <article class="detail-card">
+          <p class="detail-card__label">当前能力</p>
+          <h2>新增 / 查看 / 删除</h2>
+          <p>你可以在这里录入资料标题、说明、分类、链接和更新时间，也能删除不需要的记录。公开和私人资料会自动分流到不同页面。</p>
+        </article>
+      </div>
+
+      <section class="detail-section">
+        <h2>添加一条资料</h2>
+        <p class="private-message" id="managementMessage">当前状态：等待连接本地后端</p>
+        <form class="management-form" id="resourceForm">
+          <div class="form-grid">
+            <label class="form-field">
+              <span>资料标题</span>
+              <input id="title" type="text" placeholder="例如：机器学习课程资料总入口" required>
+            </label>
+            <label class="form-field">
+              <span>分类</span>
+              <input id="category" type="text" placeholder="例如：课程资料 / 私人学习资料" required>
+            </label>
+            <label class="form-field form-field--wide">
+              <span>资料说明</span>
+              <textarea id="description" rows="4" placeholder="简单写一下这份资料是什么，用来做什么" required></textarea>
+            </label>
+            <label class="form-field">
+              <span>可见性</span>
+              <select id="visibility" required>
+                <option value="public">public 公开资料</option>
+                <option value="private">private 私人资料</option>
+              </select>
+            </label>
+            <label class="form-field">
+              <span>更新时间</span>
+              <input id="updatedAt" type="text" placeholder="例如：2026-03-30" required>
+            </label>
+            <label class="form-field form-field--wide">
+              <span>阿里云盘链接</span>
+              <input id="aliyunUrl" type="url" placeholder="https://www.alipan.com/s/xxxxxx">
+            </label>
+            <label class="form-field">
+              <span>阿里云盘提取信息</span>
+              <input id="aliyunCode" type="text" placeholder="无就留空">
+            </label>
+            <label class="form-field form-field--wide">
+              <span>百度网盘链接</span>
+              <input id="baiduUrl" type="url" placeholder="https://pan.baidu.com/s/xxxxxx">
+            </label>
+            <label class="form-field">
+              <span>百度网盘提取码</span>
+              <input id="baiduCode" type="text" placeholder="无就留空">
+            </label>
+          </div>
+          <div class="management-actions">
+            <button class="button button--primary" type="submit">保存到数据库</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="detail-section">
+        <h2>数据库中的全部资料</h2>
+        <div class="resource-list" id="resourceList"></div>
+      </section>
+    </section>
+  </main>
+
+  <script src="./manage.js"></script>
+</body>
+</html>
